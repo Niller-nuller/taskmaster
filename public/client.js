@@ -13,17 +13,17 @@ function showError(text) {
 }
 
 async function loadTasks() {
- try {
-     const res = await fetch('/api/tasks')
-     if (!res.ok) throw new Error ('Serveren svarede ' + res.status)
-     const tasks = await res.json()
-     console.log('Hentede opgaver:', tasks)
-     render(tasks)
-     showError('')
- } catch (err) {
-     console.error(err)
-     showError('Kunne ikke hente opgave. Kører serveren')
- }
+    try {
+        const res = await fetch('/api/tasks')
+        if (!res.ok) throw new Error ('Serveren svarede ' + res.status)
+        const tasks = await res.json()
+        console.log('Hentede opgaver:', tasks)
+        render(tasks)
+        showError('')
+    } catch (err) {
+        console.error(err)
+        showError('Kunne ikke hente opgave. Kører serveren')
+    }
 }
 
 function render(tasks) {
@@ -31,7 +31,7 @@ function render(tasks) {
     count.textContent = tasks.length + (tasks.length === 1 ? ' opgave' : ' opgaver')
 
 
-    if (tasks.lenght === 0) {
+    if (tasks.length === 0) {
         const empty = document.createElement('li')
         empty.textContent = 'ingen opgaver endnu, Skriv den første overfor.'
         list.appendChild(empty)
@@ -40,7 +40,7 @@ function render(tasks) {
 
     tasks.forEach((task) => {
         const li = document.createElement('li');
-        li.textContent = (EMOJI[task.type] || '📌') + ' ' + task.feature + ' ';
+        li.textContent = (EMOJI[task.type] || '📌') + ' ' + task.text + ' ';
 
         const del = document.createElement('button')
         del.type = 'button'
