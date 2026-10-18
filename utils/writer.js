@@ -1,22 +1,15 @@
 const fs = require('node:fs/promises');
+const fse = require('fs-extra');
 const path = require('path');
 const currentDataPath = path.join(__dirname, '../data/tasks.json');
 const reader = require('./reader.js');
 const createId = require('./createId');
 
-async function writeFile(title){
-    let data = [];
-    data = reader.readTasksForTaskSystem();
-    let newId = await createId;
-    const task = await {
-        id: newId,
-        Title: title,
-    }
-    data[data.length] = task;
-    await fs.writeFile(currentDataPath, JSON.stringify(data, null, 2), 'utf8');
+async function writeTasks(tasks) {
+    await fse.writeJson(currentDataPath, tasks, { spaces: 2 });
 }
 
-module.exports = {writeFile, deleteTask}
+module.exports = {writeTasks, deleteTask}
 
 
 async function deleteTask(taskId){

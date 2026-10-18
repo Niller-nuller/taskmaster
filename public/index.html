@@ -2,13 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Taskmaster</title>
 </head>
 <body>
+<main>
+    <h1>Taskmaster</h1>
+    <p>Dit kommando center for opgaver, bugs og features.</p>
+    <form id ="task-form">
+        <input type="text" id="task-input" placeholder="Hvad skal gøres?" maxlength="200" autocomplete="off" aria-label="Ny opgave">
+        <select id="task-type" aria-label="Type">
+            <option value="opgave">📌 Opgave</option>
+            <option value="bug">🐞 Bug></option>
+            <optgroup label="feature">✨ Feature</optgroup>
+        </select>
+        <button type="submit">Tilføj opgave</button>
+    </form>
 
-<h1>Task Master app</h1>
-<p id="tasklist"> Getting list of tasks</p>
-
+    <p id="msg" role="alert"></p>
+    <p id="count"></p>
+    <ul id="task-list"></ul>
+</main>
 <script type="module" src="client.js"></script>
 </body>
 </html>

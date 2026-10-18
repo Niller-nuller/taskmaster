@@ -1,6 +1,26 @@
-{
-  "undefined": {
-    "id": "7abf50e2-1ee0-4452-8176-64b419dac95d",
-    "Title": "Your dad"
+[
+  {
+    "id": "7d2abac8-6574-4d73-87da-172482f0d8a9",
+    "text": "Fix login bug",
+    "type": "bug",
+    "status": "åben"
+  },
+  {
+    "id": "f2af2865-c0f9-429b-8d9a-a5d497b3e805",
+    "text": "Fix min dør",
+    "type": "bug",
+    "status": "åben"
+  },
+  {
+    "id": "63189b00-49ea-465f-bc1e-ea3650fe3839",
+    "text": "klækl",
+    "type": "opgave",
+    "status": "åben"
+  },
+  {
+    "id": "2a4017cb-7c16-4bc5-bf35-a89440850c5a",
+    "text": "ddsds",
+    "type": "bug",
+    "status": "åben"
   }
-}
+]
